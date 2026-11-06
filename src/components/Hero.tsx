@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { profile } from "@/data/profile";
+import { withBasePath } from "@/lib/basePath";
 
 const lineVariants = {
   hidden: { y: "110%" },
@@ -72,7 +73,7 @@ export function Hero() {
             {profile.tagline}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-[0.15em]">
-            <a href="/resume.pdf" className="underline-grow text-foreground">
+            <a href={withBasePath("/resume.pdf")} className="underline-grow text-foreground">
               Résumé
             </a>
             <a
@@ -103,7 +104,7 @@ export function Hero() {
         >
           <div className="relative h-full w-full overflow-hidden border border-line">
             <Image
-              src="/headshot.png"
+              src={withBasePath("/headshot.jpg")}
               alt={profile.name}
               fill
               sizes="200px"

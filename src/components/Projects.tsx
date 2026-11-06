@@ -8,9 +8,9 @@ export function Projects() {
   return (
     <section id="work" className="mx-auto max-w-6xl px-6 py-24 sm:px-10">
       <Reveal className="mb-10 grid gap-10 sm:grid-cols-[140px_1fr]">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
           03 — Work
-        </p>
+        </h2>
         <p className="font-display text-2xl text-foreground sm:text-3xl">
           Platforms I&apos;ve shipped and kept running in production.
         </p>

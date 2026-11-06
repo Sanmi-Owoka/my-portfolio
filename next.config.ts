@@ -14,6 +14,12 @@ const nextConfig: NextConfig = {
   },
   basePath,
   assetPrefix: basePath,
+  // Inlined into the client bundle so plain <a href> links to static files
+  // (e.g. /resume.pdf) can be prefixed manually — unlike next/image and
+  // next/link, a raw anchor tag's href is not basePath-aware automatically.
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   turbopack: {
     rules: {
       "*.css": {

@@ -9,9 +9,9 @@ export function About() {
     <section id="about" className="mx-auto max-w-6xl px-6 py-24 sm:px-10">
       <div className="grid gap-10 sm:grid-cols-[140px_1fr]">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
             01 — About
-          </p>
+          </h2>
         </Reveal>
 
         <Reveal delay={0.1}>
