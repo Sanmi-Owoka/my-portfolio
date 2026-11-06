@@ -72,6 +72,9 @@ export function Hero() {
           <p className="mt-4 text-balance text-lg leading-relaxed text-muted sm:text-xl">
             {profile.tagline}
           </p>
+          <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.1em] text-muted/80">
+            Core Banking · Event-Driven Architecture · Multi-Tenant Platforms · Maker-Checker Systems
+          </p>
           <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-[0.15em]">
             <a href={withBasePath("/resume.pdf")} className="underline-grow text-foreground">
               Résumé

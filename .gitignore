@@ -21,6 +21,9 @@
 # private reference docs — not for the public repo
 /docs/PROFILE_KNOWLEDGE.md
 
+# local snapshots of previous designs, kept for easy revert — not for the repo
+/design-backups/
+
 # production
 /build
 
