@@ -77,6 +77,10 @@ styles = {
     "projecttitle": ParagraphStyle(
         "projecttitle", fontName="Helvetica-Bold", fontSize=10.5, leading=13.5,
     ),
+    "projectdesc": ParagraphStyle(
+        "projectdesc", fontName="Helvetica", fontSize=9, leading=11.3,
+        textColor=colors.HexColor("#1a1a1a"), spaceAfter=1.7,
+    ),
     "link": ParagraphStyle(
         "link", fontName="Helvetica", fontSize=9.3, leading=12.8,
         textColor=NAVY,
@@ -112,12 +116,18 @@ def bullets(items):
 def job_scope(text):
     story.append(Paragraph(text, styles["jobscope"]))
 
+# Available text width given the page's left/right margins — used to size
+# tables to the full line width so ReportLab's default table centering
+# (hAlign="CENTER") can't introduce a left-edge offset.
+PAGE_WIDTH = doc.width
+
 def job_header(company, role, period):
     t = Table(
         [[Paragraph(company, styles["jobtitle"]), Paragraph(period, styles["jobdate"])],
          [Paragraph(role, styles["jobrole"]), ""]],
-        colWidths=[4.3 * inch, 2.0 * inch],
+        colWidths=[PAGE_WIDTH - 2.0 * inch, 2.0 * inch],
     )
+    t.hAlign = "LEFT"
     t.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("TOPPADDING", (0, 0), (-1, -1), 0),
@@ -157,7 +167,8 @@ for i in range(0, len(competencies), 2):
     row = [Paragraph(f"•&nbsp; {pair[0]}", styles["competency"])]
     row.append(Paragraph(f"•&nbsp; {pair[1]}", styles["competency"]) if len(pair) > 1 else "")
     _comp_rows.append(row)
-_comp_table = Table(_comp_rows, colWidths=[3.15 * inch, 3.15 * inch])
+_comp_table = Table(_comp_rows, colWidths=[PAGE_WIDTH / 2, PAGE_WIDTH / 2])
+_comp_table.hAlign = "LEFT"
 _comp_table.setStyle(TableStyle([
     ("VALIGN", (0, 0), (-1, -1), "TOP"),
     ("TOPPADDING", (0, 0), (-1, -1), 1),
@@ -282,7 +293,7 @@ section("PROJECTS")
 def project(name, desc, tech, link, link_label="Link", note=None):
     block = [
         Paragraph(name, styles["projecttitle"]),
-        Paragraph(desc, styles["bullet"]),
+        Paragraph(desc, styles["projectdesc"]),
         Paragraph(f"<b>Technologies Used:</b> {tech}", styles["tech"]),
     ]
     if link:
