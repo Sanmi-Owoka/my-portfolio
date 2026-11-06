@@ -76,7 +76,12 @@ export function Hero() {
             Core Banking · Event-Driven Architecture · Multi-Tenant Platforms · Maker-Checker Systems
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-[0.15em]">
-            <a href={withBasePath("/resume.pdf")} className="underline-grow text-foreground">
+            <a
+              href={withBasePath("/resume.pdf")}
+              target="_blank"
+              rel="noreferrer"
+              className="underline-grow text-foreground"
+            >
               Résumé
             </a>
             <a
