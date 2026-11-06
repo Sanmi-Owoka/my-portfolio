@@ -16,6 +16,10 @@
 # next.js
 /.next/
 /out/
+/AGENTS.md
+
+# private reference docs — not for the public repo
+/docs/PROFILE_KNOWLEDGE.md
 
 # production
 /build
