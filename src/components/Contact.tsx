@@ -8,9 +8,9 @@ export function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-28 sm:px-10">
       <Reveal className="grid gap-10 sm:grid-cols-[140px_1fr]">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
           04 — Contact
-        </p>
+        </h2>
 
         <div>
           <p className="max-w-2xl text-balance font-display text-3xl leading-tight text-foreground sm:text-5xl">

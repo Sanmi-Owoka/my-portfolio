@@ -15,11 +15,11 @@ export function Experience() {
   return (
     <section id="experience" className="mx-auto max-w-6xl px-6 py-24 sm:px-10">
       <Reveal className="mb-14 grid gap-10 sm:grid-cols-[140px_1fr]">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+        <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
           02 — Experience
-        </p>
+        </h2>
         <p className="font-display text-2xl text-foreground sm:text-3xl">
-          Four years, four teams, one habit: make the unglamorous parts correct.
+          Five years, four teams, one habit: make the unglamorous parts correct.
         </p>
       </Reveal>
 

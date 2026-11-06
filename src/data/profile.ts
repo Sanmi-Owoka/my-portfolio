@@ -23,12 +23,30 @@ export const skills = {
     "Django REST Framework",
     "Pydantic",
     "JavaScript",
+    "TypeScript",
     "Node.js",
     "Express.js",
+    "NestJS",
   ],
-  "Data & Messaging": ["PostgreSQL", "MongoDB", "Redis", "RabbitMQ", "Celery"],
-  "Infrastructure": ["Docker", "AWS (EC2, S3)", "Git & GitHub", "CI/CD"],
-  "Process": ["Agile / Scrum", "API Design", "Test Coverage", "Code Review"],
+  "Data & Messaging": [
+    "PostgreSQL",
+    "Sequelize",
+    "TypeORM",
+    "MongoDB",
+    "Redis",
+    "Elasticsearch",
+    "Apache Kafka",
+    "RabbitMQ",
+    "Celery",
+  ],
+  "Cloud & DevOps": ["Docker", "AWS (EC2, S3, Textract)", "GitHub Actions", "SonarQube"],
+  "Practices": [
+    "Agile / Scrum",
+    "OpenAPI / Swagger",
+    "Maker-Checker & Audit Systems",
+    "Jest & Pytest",
+    "Git & Code Review",
+  ],
 };
 
 export type Experience = {
@@ -46,18 +64,18 @@ export const experience: Experience[] = [
     role: "Backend Engineer",
     period: "Feb 2024 — Present",
     summary:
-      "Work on customer management and Customer 360 — the systems that handle a customer's full lifecycle and the account-level controls placed on them.",
+      "Core contributor to a multi-tenant core banking platform deployed across several banks and fintechs — covering customer lifecycle, account controls, and the event-driven systems that keep them in sync.",
     highlights: [
-      "Own the customer management module covering the full customer lifecycle: creation, modification, deactivation, and reactivation of customer records.",
-      "Enforce validation, authorization, and audit trails at each lifecycle state change to keep customer data accurate and traceable.",
-      "Build and maintain Customer 360, giving support and operations teams a unified view of a customer's accounts and the controls placed on them.",
-      "Implement mandate setup, allowing account-level permissions and standing instructions to be configured per customer.",
-      "Implement lien placement, enabling funds on an account to be held or restricted against withdrawal when required.",
-      "Implement account restriction placement, controlling what actions a customer can perform on their account.",
-      "Managed Dockerized environments and Git-based deployments for feature development.",
-      "Performed end-to-end API testing and resolved user-reported bugs to keep system quality high.",
+      "Core contributor (#3 of 60+ contributors) to the customer management service of a multi-tenant core banking platform used by several banks and fintechs.",
+      "Built maker-checker workflows with segregation of duties, department- and branch-scoped approvals, and audit trails that record previous values across 10+ request types.",
+      "Delivered core-banking account controls: mandates and signatories, liens, restrictions, stop-cheque (with charge and tax journal posting), withdrawal thresholds, and obligor limits.",
+      "Implemented account closure with automated balance transfer and interest/earnings calculation, integrated with the core banking system's transfer and journal APIs.",
+      "Set up a Customer 360 service from scratch (NestJS, TypeORM, Redis), powering ops dashboards and channel lookup APIs by BVN, NIN, phone number, and account number.",
+      "Built bulk pipelines for customer migration, restrictions, and account-officer reassignment, with query and upload optimizations for large files.",
+      "Shipped joint, corporate (beneficial-owner), and custodial-minor onboarding, including an automated job that hands accounts over when a minor comes of age.",
+      "Built event-driven integrations on Kafka — producers for customer and account events, consumers for notifications — and migrated a Django service's background jobs from Celery to Kafka.",
     ],
-    stack: ["Node.js", "Express.js", "Python", "Django", "Django REST Framework", "Docker", "Celery"],
+    stack: ["Node.js", "Express.js", "NestJS", "TypeScript", "Python", "Django REST Framework", "PostgreSQL", "Kafka", "Redis", "Docker"],
   },
   {
     company: "Herconomy",
@@ -116,6 +134,33 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "core-banking-customer-accounts",
+    name: "Core Banking — Customer & Account Management",
+    category: "Core Banking / Fintech",
+    description:
+      "Customer lifecycle and account-control systems for a multi-tenant core banking platform deployed across several banks and fintechs — onboarding (individual, SME, corporate, joint), KYC/BVN checks, mandates, liens, restrictions, stop-cheque, withdrawal thresholds, obligor limits, and bulk customer/account migration pipelines.",
+    stack: ["Node.js", "Express.js", "PostgreSQL", "Sequelize", "Redis", "Kafka", "AWS S3", "Docker"],
+    status: "Internal",
+  },
+  {
+    slug: "customer-360",
+    name: "Customer 360 Service",
+    category: "Core Banking / Internal Tooling",
+    description:
+      "Greenfield service built from scratch giving operations and support teams a unified view of a customer's accounts, mandates, and restrictions, plus channel lookup APIs by BVN, NIN, phone number, and account number.",
+    stack: ["NestJS", "TypeScript", "TypeORM", "PostgreSQL", "Redis", "Swagger", "Docker"],
+    status: "Internal",
+  },
+  {
+    slug: "notification-service",
+    name: "Notification Service",
+    category: "Core Banking / Messaging",
+    description:
+      "Event-driven transactional notifications — lien placement, investment booking/maturity/liquidation, loan repayment, annual fees, and birthday emails — consumed from Kafka and rendered across multiple currencies.",
+    stack: ["Node.js", "TypeScript", "Kafka", "TypeORM", "Handlebars"],
+    status: "Internal",
+  },
   {
     slug: "dinma-api",
     name: "Dinma API",
