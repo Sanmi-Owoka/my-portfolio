@@ -5,11 +5,11 @@ export const profile = {
     "I design and maintain production backend systems for fintech and marketplace products — customer account infrastructure, payment systems, and automated financial workflows.",
   bio: "Backend engineer with 5+ years building and maintaining production-grade systems in Python, Django, Django REST Framework, Node.js, and Express. I spend most of my time on API infrastructure, authorization workflows, and the unglamorous reliability work that keeps financial systems correct — things like customer lifecycle and account-control systems (mandates, liens, restrictions), maker-checker approval flows, and automated savings engines. I work well in Agile teams, I'm comfortable navigating codebases I didn't write, and I care about test coverage and clean deploys as much as shipping features.",
   location: "Nigeria",
-  email: "owokaayoola@outlook.com",
+  email: "oluwasanmi.owoka@outlook.com",
   links: {
     github: "https://github.com/Sanmi-Owoka",
     linkedin: "https://www.linkedin.com/in/oluwasanmi-owoka/",
-    email: "mailto:owokaayoola@outlook.com",
+    email: "mailto:oluwasanmi.owoka@outlook.com",
   },
   available: true,
   currentRole: { company: "Peerless", title: "Backend Engineer" },
