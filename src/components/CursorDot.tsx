@@ -13,7 +13,7 @@ function subscribe(callback: () => void) {
 function getSnapshot() {
   return window.matchMedia(QUERY).matches;
 }
-
+ 
 function getServerSnapshot() {
   return false;
 }

@@ -97,7 +97,7 @@ story = []
 story.append(Paragraph("OLUWASANMI AYOOLA OWOKA", styles["name"]))
 story.append(Paragraph("Backend Engineer — Core Banking &amp; Fintech Infrastructure", styles["subtitle"]))
 story.append(Paragraph(
-    "owokaayoola@outlook.com &nbsp;&bull;&nbsp; +2348106387865 &nbsp;&bull;&nbsp; "
+    "oluwasanmi.owoka@outlook.com &nbsp;&bull;&nbsp; +2348106387865 &nbsp;&bull;&nbsp; "
     "github.com/Sanmi-Owoka &nbsp;&bull;&nbsp; linkedin.com/in/oluwasanmi-owoka &nbsp;&bull;&nbsp; "
     "oluwasanmiowoka.vercel.app",
     styles["contact"],
